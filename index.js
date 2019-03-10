@@ -92,7 +92,7 @@ module.exports = class QiniuPlugin {
       // append taro lib
       filesNames.push(
         'lib/lib.dll.js',
-        'lib-manifest.json'
+        'lib/lib-manifest.json'
       );
 
       totalFiles = filesNames.length;
