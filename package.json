@@ -1,0 +1,31 @@
+{
+  "name": "taro-qiniu",
+  "version": "1.0.0",
+  "description": "Qiniu webpack plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maskwang/taro-qiniu.git"
+  },
+  "keywords": [
+    "taro",
+    "qiniu",
+    "webpack",
+    "plugin"
+  ],
+  "author": "maskwang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maskwang/taro-qiniu/issues"
+  },
+  "homepage": "https://github.com/maskwang/taro-qiniuk#readme",
+  "dependencies": {
+    "lodash.isregexp": "^4.0.1",
+    "lodash.isstring": "^4.0.1",
+    "ora": "^2.1.0",
+    "qiniu": "^7.2.1"
+  }
+}
