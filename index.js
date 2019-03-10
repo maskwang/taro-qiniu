@@ -65,6 +65,12 @@ module.exports = class QiniuPlugin {
       let totalFiles = 0;
       let uploadedFiles = 0;
 
+      function getRootPath(localFileName) {
+        return localFileName.substr(0, localFileName.indexOf('dist/')) + 'dist/';
+      }
+
+      var rootPath = getRootPath(assets[filesNames[0]].existsAt);
+      
       // Mark finished
       let _finish = (err) => {
         spinner.succeed();
@@ -106,7 +112,7 @@ module.exports = class QiniuPlugin {
 
       // Perform upload to qiniu
       const performUpload =function(fileName) {
-        let file = assets[fileName] || {};
+        let file = assets[fileName] || {existsAt: rootPath + fileName};
         let key = path.posix.join(uploadPath, fileName);
         let putPolicy = new qiniu.rs.PutPolicy({ scope: bucket + ':' + key });
         let uploadToken = putPolicy.uploadToken(mac);
@@ -151,7 +157,7 @@ module.exports = class QiniuPlugin {
 
     // For webpack >= 4
     if (compiler.hooks) {
-      compiler.hooks.afterEmit.tapAsync('QiniuWebpackPlugin', uploadFiles);
+      compiler.hooks.afterEmit.tapAsync('TaroQiniuPlugin', uploadFiles);
     }
     // For webpack < 4
     else {

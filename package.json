@@ -1,6 +1,6 @@
 {
   "name": "taro-qiniu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Qiniu webpack plugin",
   "main": "index.js",
   "scripts": {
