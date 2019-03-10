@@ -10,7 +10,7 @@ Taro Qiniu Webpack Plugin
 ## 安装
 
 ```sh
-npm i -D taro-qiniu@1.0.0
+npm i -D taro-qiniu@1.0.1
 ```
 
 ## 使用方法
